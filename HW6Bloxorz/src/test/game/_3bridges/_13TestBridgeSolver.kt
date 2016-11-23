@@ -36,33 +36,33 @@ class _13TestBridgeSolver : TestSolver() {
     @Test
     fun testBridgeLevel9() = testFindingSolutionForBridgeLevel("bridgeLevel09.txt")
 
-//    @Test
-//    fun testBridgeLevel10() = testFindingSolutionForBridgeLevel("bridgeLevel10.txt")
-//
-//    @Test
-//    fun testBridgeLevel11() = testFindingSolutionForBridgeLevel("bridgeLevel11.txt")
-//
-//    @Test
-//    fun basicLevel1() = testFindingSolutionForBloxorzLevel("level02.txt")
-//
-//    @Test
-//    fun basicLevel3() = testFindingSolutionForBloxorzLevel("level05.txt")
-//
-//    @Test
-//    fun basicLevel4() = testFindingSolutionForBloxorzLevel("level07.txt")
-//
-//    @Test
-//    fun lightLevel1() = testFindingSolutionForBridgeLevel("lightCellsLevel1.txt")
-//
-//    @Test
-//    fun lightLevel2() = testFindingSolutionForBridgeLevel("lightCellsLevel2.txt")
-//
-//    @Test
-//    fun lightLevel3() = testFindingSolutionForBridgeLevel("lightCellsLevel3.txt")
-//
-//    @Test
-//    fun lightLevel4() = testFindingSolutionForBridgeLevel("lightCellsLevel4.txt")
-//
-//    @Test
-//    fun lightLevel5() = testFindingSolutionForBridgeLevel("lightCellsLevel5.txt")
+    @Test
+    fun testBridgeLevel10() = testFindingSolutionForBridgeLevel("bridgeLevel10.txt")
+
+    @Test
+    fun testBridgeLevel11() = testFindingSolutionForBridgeLevel("bridgeLevel11.txt")
+
+    @Test
+    fun basicLevel1() = testFindingSolutionForBloxorzLevel("level02.txt")
+
+    @Test
+    fun basicLevel3() = testFindingSolutionForBloxorzLevel("level05.txt")
+
+    @Test
+    fun basicLevel4() = testFindingSolutionForBloxorzLevel("level07.txt")
+
+    @Test
+    fun lightLevel1() = testFindingSolutionForBridgeLevel("lightCellsLevel1.txt")
+
+    @Test
+    fun lightLevel2() = testFindingSolutionForBridgeLevel("lightCellsLevel2.txt")
+
+    @Test
+    fun lightLevel3() = testFindingSolutionForBridgeLevel("lightCellsLevel3.txt")
+
+    @Test
+    fun lightLevel4() = testFindingSolutionForBridgeLevel("lightCellsLevel4.txt")
+
+    @Test
+    fun lightLevel5() = testFindingSolutionForBridgeLevel("lightCellsLevel5.txt")
 }

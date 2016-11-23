@@ -1,7 +1,9 @@
 package _GarifullinShamil
 
+import bloxorz.Game
 import bridges.Bridge
 import bridges.BridgeState
+import java.util.*
 
 data class GameState(val block: Block, val bridges: MutableMap<Bridge, BridgeState>) {
     override fun hashCode(): Int {
@@ -20,4 +22,5 @@ data class GameState(val block: Block, val bridges: MutableMap<Bridge, BridgeSta
         return true
     }
 
+    fun copy(): GameState = GameState(block, HashMap(bridges))
 }

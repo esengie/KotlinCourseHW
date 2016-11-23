@@ -59,26 +59,26 @@ class GameImpl(board: String, bridgesInfo: BridgesInfo?) : Game {
     }
 
     override fun suggestMoves(): List<Direction>? {
-        val saved: GameState = state
+        val saved: GameState = state.copy()
         val q: Queue<GameState> = LinkedList()
         q.add(state)
-        val prevs: MutableMap<GameState, Direction> = mutableMapOf()
+        val prevs: MutableMap<GameState, Pair<Direction, GameState>> = mutableMapOf()
         val seen: MutableSet<GameState> = mutableSetOf()
         while (!q.isEmpty()) {
             val st: GameState = q.poll()
             seen.add(st)
             for (i in directions) {
-                state = st
+                state = st.copy()
                 processMove(i)
                 if (state != initState && !seen.contains(state)) {
                     q.add(state)
-                    prevs[state] = i
+                    prevs[state] = i to st
                 }
                 if (hasWon()) {
                     val res: MutableList<Direction> = mutableListOf()
-                    while (state != saved) {
-                        res.add(prevs[state]!!)
-                        processMove(prevs[state]!!.reverse())
+                    while (state.block != saved.block) {
+                        res.add(prevs[state]!!.first)
+                        state = prevs[state]!!.second
                     }
                     return res.reversed()
                 }
