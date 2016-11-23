@@ -1,0 +1,35 @@
+<!-- This is xml version of setting up the state machine. -->
+<stateMachine start="idle">
+    <event name="doorClosed"/>
+    <event name="drawerOpened"/>
+    <event name="lightOn"/>
+    <event name="doorOpened"/>
+    <event name="panelClosed"/>
+
+    <command name="unlockPanel"/>
+    <command name="lockPanel"/>
+    <command name="lockDoor"/>
+    <command name="unlockDoor"/>
+
+    <state name="idle">
+        <transition event="doorClosed" target="active"/>
+        <action command="unlockDoor"/>
+        <action command="lockPanel"/>
+    </state>
+    <state name="active">
+        <transition event="drawerOpened" target="waitingForLight"/>
+        <transition event="lightOn" target="waitingForDrawer"/>
+    </state>
+    <state name="waitingForLight">
+        <transition event="lightOn" target="unlockedPanel"/>
+    </state>
+    <state name="waitingForDrawer">
+        <transition event="drawerOpened" target="unlockedPanel"/>
+    </state>
+    <state name="unlockedPanel">
+        <action command="unlockPanel"/>
+        <action command="lockDoor"/>
+        <transition event="panelClosed" target="idle"/>
+    </state>
+    <resetEvent name="doorOpened"/>
+</stateMachine>
